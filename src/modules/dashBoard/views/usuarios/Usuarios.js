@@ -17,12 +17,10 @@ export default defineComponent({
     const { getUsers, addUsers, deleteUsers, updateUsers } = userState();
 
     const selectedTable = ref() // Valor seleccionado en la tabla
-    let model = ref(null); // Opcion seleccionada en el select
+    let model = ref(null); // Opcion seleccionada en el select de actualizar
     
     let opcionesUser = ref();
-    opcionesUser = getUsers.value.map( row  => {
-      return row.nombreUsuario
-    })
+    opcionesUser = getUsers.value.map( row  => row.nombreUsuario )
 
     // Formulario de Agregar
     const addUserForm = ref({
@@ -67,9 +65,7 @@ export default defineComponent({
     async function removeUser(){
       const confirmado = await dialogoConfirmar('Eliminar Usuario', '¿Esta seguro de eliminar el usuario del sistema?');
 
-      if( !confirmado ) {
-        return
-      }
+      if( !confirmado ) return
 
       deleteUsers( selectedTable.value[0].nombreUsuario ); // Mandamos el nombre de usuario
     }
@@ -77,9 +73,7 @@ export default defineComponent({
       const form = updateUserForm.value;
       const { userSelected ,nombreUsuario, nombre, apellido, telefono, email, contraseña1, contraseña2 } = form
 
-      if( userSelected === '' || nombreUsuario === '', nombre === '', apellido === '', telefono === '', email === '', contraseña2 !== contraseña1 ){
-        return
-      }
+      if( userSelected === '' || nombreUsuario === '', nombre === '', apellido === '', telefono === '', email === '', contraseña2 !== contraseña1 ) return
 
       const confirmado = await dialogoConfirmar('Actuializar Usuario', '¿Esta seguro de querer actualizar el usuario?');
 
