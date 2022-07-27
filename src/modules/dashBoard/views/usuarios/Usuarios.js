@@ -12,15 +12,15 @@ import dialogs from '../../helpers/dialogs'
 
 export default defineComponent({
   name: 'usuarios',
+
   setup() {
     const { dialogoConfirmar } = dialogs();
-    const { getUsers, addUsers, deleteUsers, updateUsers } = userState();
-
+    const { getUsers, getNombreUsers,addUsers, deleteUsers, updateUsers } = userState();
+ 
     const selectedTable = ref() // Valor seleccionado en la tabla
     let model = ref(null); // Opcion seleccionada en el select de actualizar
     
-    let opcionesUser = ref();
-    opcionesUser = getUsers.value.map( row  => row.nombreUsuario )
+
 
     // Formulario de Agregar
     const addUserForm = ref({
@@ -35,7 +35,7 @@ export default defineComponent({
     
     // Formulario de Actualizar
     const updateUserForm = ref({
-      optionsSelect: opcionesUser,
+      optionsSelect: getNombreUsers,
       userSelected: model,
       nombreUsuario: '',
       nombre: '',
@@ -48,10 +48,11 @@ export default defineComponent({
 
 
     //todo FUNCIONES DEL CRUD
+
+    //! Agregar Usuarios
     async function submitAdd(){
 
-      const form = addUserForm.value;
-      const { nombreUsuario, nombre, apellido, telefono, email, contraseña1, contraseña2 } = form;
+      const { nombreUsuario, nombre, apellido, telefono, email, contraseña1, contraseña2 } = addUserForm.value;
 
       if( nombreUsuario === '' || nombre === '' || apellido === '' ||  telefono === '' ||  email === '' ||  contraseña1 === '' ||  contraseña1 !== contraseña2 ) return
 
@@ -61,7 +62,11 @@ export default defineComponent({
       }
       
       addUsers( addUserForm.value );
+      
     }
+
+
+    //! Eliminar Usuarios
     async function removeUser(){
       const confirmado = await dialogoConfirmar('Eliminar Usuario', '¿Esta seguro de eliminar el usuario del sistema?');
 
@@ -69,9 +74,11 @@ export default defineComponent({
 
       deleteUsers( selectedTable.value[0].nombreUsuario ); // Mandamos el nombre de usuario
     }
+    
+    //! Actualizar Usuarios
     async function submitUpdate(){
-      const form = updateUserForm.value;
-      const { userSelected ,nombreUsuario, nombre, apellido, telefono, email, contraseña1, contraseña2 } = form
+      
+      const { userSelected ,nombreUsuario, nombre, apellido, telefono, email, contraseña1, contraseña2 } = updateUserForm.value;
 
       if( userSelected === '' || nombreUsuario === '', nombre === '', apellido === '', telefono === '', email === '', contraseña2 !== contraseña1 ) return
 
@@ -81,7 +88,7 @@ export default defineComponent({
     }
     
 
-    //* Watch que mapea los datos del usuario seleccionado al formulario
+    //! Watch que mapea los datos del usuario seleccionado al formulario
     watch( model, (newVal) => { 
       // Buscamos el los datos del usuario a travez del select
       const user = getUsers.value.find( usuario => usuario.nombreUsuario === newVal );

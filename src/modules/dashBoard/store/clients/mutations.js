@@ -1,6 +1,7 @@
 export function someMutation (/* state */) {
 }
 
+//! Mutacion para agregar un cliente al state
 export function addClient ( state, form ) {
 
     const { nombre, apellidos, rut, telefono, email, direccion } = form;
@@ -15,6 +16,7 @@ export function addClient ( state, form ) {
     state.clients.push( newClient );
 }
 
+//! Mutacion para eliminar un cliente del state
 export function deleteClient( state, rutClient ) {
 
     const clients = state.clients.filter( c => c.rut !== rutClient );
@@ -22,6 +24,7 @@ export function deleteClient( state, rutClient ) {
 
 }
 
+//! Mutacion para actualizar un cliente en especifico del state
 export function updateClient( state, client ){
     const newClientes = state.clients.map( cliente => {
 
@@ -40,10 +43,10 @@ export function updateClient( state, client ){
 }
 
 
+//! Modifican el state e indican si el rut ingresado es valido
 export function invalidRut( state ) {
     state.validRut = false;
 }
-
 export function validRut( state ) {
     state.validRut = true;
 }

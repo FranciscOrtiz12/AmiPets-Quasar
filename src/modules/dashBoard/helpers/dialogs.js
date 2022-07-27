@@ -1,6 +1,6 @@
 import { Dialog, Notify } from 'quasar'
 
-
+//! FUNCION QUE CREA DIALOGOS Y NOTIFICACIONES
 const dialogs = () => {
 
     // Dialogo de cancel o confirm

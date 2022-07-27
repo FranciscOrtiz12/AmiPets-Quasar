@@ -14,12 +14,20 @@ export default defineComponent({
 
     //! HERRAMIENTAS
     const { dialogoConfirmar, notify } = dialogs();
-    const { getClients, getValidRut, invalidRut, validRut, addClient, deleteClient, updateClient } = useClientState(); //! composable
+    const { getClients,
+            getValidRut,
+            invalidRut,
+            validRut,
+            addClient,
+            deleteClient,
+            updateClient } = useClientState(); //! composable
 
-    //! TABLE
+
+    //! VARIABLES
+    //! table
     const selectedTable = ref(); //* valor seleccionado en tabla
 
-    //! FORMULARIOS
+    //! formularios
     const addClientForm = ref({
       nombre: '',
       apellidos: '',
@@ -28,7 +36,6 @@ export default defineComponent({
       email: '',
       direccion: '',
     })
-
     const updateClientForm = ref({
       clientToUpdateRut: '',
       nombre: '',

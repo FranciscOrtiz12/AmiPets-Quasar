@@ -6,7 +6,7 @@ const useClientState = () => {
     const store = useStore();
 
     return {        
-        // Getters
+        //! Getters
         getClients: computed({
             get(){
                 return store.getters['clients/getClients']
@@ -18,11 +18,11 @@ const useClientState = () => {
 
         getValidRut: computed( () => store.getters['clients/getValidRut'] ),
         
-        //? Mutations
+        //! Mutations
         invalidRut: ( ) => store.commit('clients/invalidRut'),
         validRut: ( ) => store.commit('clients/validRut'),
         
-        //? Actions
+        //! Actions
         addClient: ( form ) => store.dispatch('clients/addClientAction', form),
         deleteClient: ( rutClient ) => store.dispatch('clients/deleteClientAction', rutClient),
         updateClient: ( form ) => store.dispatch('clients/updateClientAction', form),

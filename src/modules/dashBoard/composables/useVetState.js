@@ -16,6 +16,11 @@ const useVetState = () => {
                 console.log({val})
             }
          }),
+         getNombreVets: computed({
+            get(){
+             return store.getters['veterinarios/getNombreVets']
+            },
+         }),
 
 
         //! Actions

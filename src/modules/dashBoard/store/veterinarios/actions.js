@@ -17,5 +17,5 @@ export function deleteVetAct ( { commit }, rut ) {
 
 export function updateVetAct ( { commit }, datos ) {
     commit('updateVet', datos);
-    notify('positive', 'Veterinario Eliminado Correctamente');
+    notify('positive', 'Veterinario Actualizado Correctamente');
 }

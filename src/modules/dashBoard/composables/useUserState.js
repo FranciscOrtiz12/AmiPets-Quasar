@@ -17,6 +17,11 @@ const userState = () => {
                console.log({val})
            }
         }),
+        getNombreUsers: computed({
+           get(){
+            return store.getters['user/getNombreUsers']
+           }
+        }),
 
         // Mutations
         // addUser: ( form ) => store.commit('user/addUser', form),

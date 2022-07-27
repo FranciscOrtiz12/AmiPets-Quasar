@@ -1,0 +1,68 @@
+export default function () {
+  return {
+    mascotas: [
+      {
+        id: '1crduv9a0dd',
+        rutDue: '20541688-9',
+        nombre: 'Sam',
+        color: 'Negro',
+        sexo: 'Macho',
+        tipo: 'Perro',
+        size: 'Mediano',
+        edad: '9',
+      },
+      {
+        id: 'c8pn0swtidw',
+        rutDue: '9872364-9',
+        nombre: 'Alba',
+        color: 'Blanco',
+        sexo: 'Hembra',
+        tipo: 'Perro',
+        size: 'Grande',
+        edad: '12',
+      },
+      {
+        id: '1f9u4dvnhpj',
+        rutDue: '26743192-9',
+        nombre: 'Pelusa',
+        color: 'Blanca',
+        sexo: 'Hembra',
+        tipo: 'Gato',
+        size: 'Grande',
+        edad: '4',
+      },
+      {
+        id: 'h0uvd1jlrz',
+        rutDue: '26743192-9',
+        nombre: 'Quira',
+        color: 'Cafe Palido',
+        sexo: 'Hembra',
+        tipo: 'Perro',
+        size: 'Mediano',
+        edad: '2',
+      },
+      {
+        id: 'bwg8xhuwvgo',
+        rutDue: '21982232-9',
+        nombre: 'Donatelo',
+        color: 'Cafe',
+        sexo: 'Macho',
+        tipo: 'Tortuga',
+        size: 'Pequeño',
+        edad: '2',
+      },
+      {
+        id: 'exd0gr2m9d',
+        rutDue: '21982232-9',
+        nombre: 'Nano',
+        color: 'Negro',
+        sexo: 'Macho',
+        tipo: 'Perro',
+        size: 'Grande',
+        edad: '9',
+      },
+    ],
+
+    validRut: false,
+  }
+}

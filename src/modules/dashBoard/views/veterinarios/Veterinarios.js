@@ -18,14 +18,12 @@ export default defineComponent({
     //! VARIABLES
     
     const { dialogoConfirmar } = dialogs();
-    const { getVeterinarios, addVet, deleteVet, updateVet  } = useVetState();
+    const { getVeterinarios, getNombreVets, addVet, deleteVet, updateVet  } = useVetState();
 
     const selectedTable = ref(); //? Opcion seleccionada en la tabla
 
     let model = ref(null); //? Opcion seleccionada en el select de actualizar
  
-    let opcionesVet = getVeterinarios.value; //?Listado de veterinarios en el form de actualizar
-
     //! FORMULARIOS
     const addVetForm = ref({
         nombre: '',
@@ -37,7 +35,7 @@ export default defineComponent({
       })
       
       const updateVetForm = ref({
-        optionsSelect: opcionesVet,
+        optionsSelect: getNombreVets,
         vetSelected: model,
         nombre: '',
         apellidos: '',
@@ -47,8 +45,9 @@ export default defineComponent({
         telefono: '',
     })
 
-    //! FUNCIONES
+    //todo FUNCIONES
     
+    //! Agregar Veterinario
     async function submitAdd(){
         const { nombre, apellidos, rut, especialidad, email, telefono } = 
         addVetForm.value;
@@ -62,14 +61,18 @@ export default defineComponent({
         
     }
 
+
+    //! Eliminar Veterinario
     async function removeVet(){
-        const confirmado = await dialogoConfirmar('Eliminar Veterinario', '¿Esta seguro de elimnar el veterinario del sistema?')
-
-        if( !confirmado ) return
-
-        deleteVet( selectedTable.value[0].rut );
+      const confirmado = await dialogoConfirmar('Eliminar Veterinario', '¿Esta seguro de elimnar el veterinario del sistema?')
+      
+      if( !confirmado ) return
+      
+      deleteVet( selectedTable.value[0].rut );
     }
+    
 
+    //! Actualizar Veterinario
     async function submitUpdate(){
       const form = updateVetForm.value;
       const { vetSelected, nombre, apellidos, rut, especialidad, email, telefono } = form;

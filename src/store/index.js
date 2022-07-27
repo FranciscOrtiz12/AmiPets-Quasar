@@ -5,6 +5,7 @@ import { createStore } from 'vuex'
 import user from '../modules/dashBoard/store/users'
 import clients from '../modules/dashBoard/store/clients'
 import veterinarios from '../modules/dashBoard/store/veterinarios'
+import mascotas from '../modules/dashBoard/store/mascotas'
 
 
 /*
@@ -22,6 +23,7 @@ export default store(function (/* { ssrContext } */) {
       user,
       clients,
       veterinarios,
+      mascotas,
     },
 
     // enable strict mode (adds overhead!)
