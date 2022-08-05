@@ -5,7 +5,7 @@ import { defineComponent, ref } from 'vue'
 import useClientState from '../../composables/useClientState'
 
 //* Helpers
-import { helpLimpiarFormulario, isValidEmail } from '../../helpers/helpers'
+import { helpLimpiarFormulario, isValidEmail, verificarRutCLiente } from '../../helpers/helpers'
 import dialogs from '../../helpers/dialogs';
 
 export default defineComponent({
@@ -52,7 +52,8 @@ export default defineComponent({
       const cliente = getClients.value.find( c => c.rut === valor.trim() );
       return cliente;
     }
-    
+
+
     //? Verifica el rut y rellena el formulario de actualizar
     const rellenarForm = ( valor ) => {
       const cliente = verificarRut( valor );

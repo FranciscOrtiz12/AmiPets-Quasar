@@ -11,7 +11,7 @@ const useMasState = () => {
             get(){
                 return store.getters['mascotas/getMascotas']
             },
-        set(val){
+            set(val){
                 console.log({val})
             }
         }),

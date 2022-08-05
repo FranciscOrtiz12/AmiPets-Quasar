@@ -27,7 +27,7 @@
               <q-separator />
 
               <q-tab-panels v-model="tab" animated>
-                <q-tab-panel class="q-my-md " name="add">
+                <q-tab-panel class="q-my-md" name="add">
                   
                   <div class="column q-mx-md">
                     <span class="text-h6 text-bold">Mascotas</span>

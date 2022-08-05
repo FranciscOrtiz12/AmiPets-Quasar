@@ -133,8 +133,7 @@ export default defineComponent({
 
 
     async function submitUpdate() {
-      const form = updateMasForm.value;
-      const { rutDue, id, nombre, color, sexo, size, edad } = form;
+      const { rutDue, id, nombre, color, sexo, size, edad } = updateMasForm.value;
 
       if( rutDue === '' || id === '' || nombre === '' || color === '' || sexo === '' || size === '' || edad === '') return 
 

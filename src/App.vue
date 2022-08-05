@@ -4,8 +4,10 @@
 
 <script>
 import { defineComponent } from 'vue'
+import store from './store';
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  store
 })
 </script>

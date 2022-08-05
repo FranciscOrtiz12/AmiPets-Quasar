@@ -6,6 +6,5 @@ export function getMascotas ( state ) {
 }
 
 export function getMasbyRut ( state, datos ) { 
-    console.log(datos);
     return state.mascotas;
 }

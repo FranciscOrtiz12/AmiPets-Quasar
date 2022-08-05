@@ -6,6 +6,7 @@ import user from '../modules/dashBoard/store/users'
 import clients from '../modules/dashBoard/store/clients'
 import veterinarios from '../modules/dashBoard/store/veterinarios'
 import mascotas from '../modules/dashBoard/store/mascotas'
+import controls from '../modules/dashBoard/store/controls'
 
 
 /*
@@ -24,6 +25,7 @@ export default store(function (/* { ssrContext } */) {
       clients,
       veterinarios,
       mascotas,
+      controls,
     },
 
     // enable strict mode (adds overhead!)

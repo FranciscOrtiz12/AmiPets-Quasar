@@ -1,15 +1,15 @@
-import useClientState from '../composables/useClientState'
+import useClientState from '../composables/useClientState';
 import dialogs from '../helpers/dialogs'
 
 
-const { getClients } = useClientState();
+const { getClients, prueba } = useClientState();
 const { notify } = dialogs();
 
 
 
 
 //* FUNCION VERIFICAR SI EL RUT DEL CLIENTE EXISTE
-export const verificarRutCLiente = ( rut ) => {    
+export const verificarRutCLiente = ( rut = null ) => {    
     // La idea de esta funcion, es usar el state de usuarios y asi lograr buscar un cliente por su rut y devolver un true o un false segun corresponda
 }
 
