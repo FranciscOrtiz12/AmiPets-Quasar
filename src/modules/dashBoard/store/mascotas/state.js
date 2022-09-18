@@ -3,7 +3,7 @@ export default function () {
     mascotas: [
       {
         id: '1crduv9a0dd',
-        rutDue: '20541688-9',
+        rutDue: '13113859-2',
         nombre: 'Sam',
         color: 'Negro',
         sexo: 'Macho',
@@ -13,7 +13,7 @@ export default function () {
       },
       {
         id: 'c8pn0swtidw',
-        rutDue: '9872364-9',
+        rutDue: '21134910-8',
         nombre: 'Alba',
         color: 'Blanco',
         sexo: 'Hembra',
@@ -23,7 +23,7 @@ export default function () {
       },
       {
         id: '1f9u4dvnhpj',
-        rutDue: '26743192-9',
+        rutDue: '19234412-9',
         nombre: 'Pelusa',
         color: 'Blanca',
         sexo: 'Hembra',
@@ -33,7 +33,7 @@ export default function () {
       },
       {
         id: 'h0uvd1jlrz',
-        rutDue: '26743192-9',
+        rutDue: '19234412-9',
         nombre: 'Quira',
         color: 'Cafe Palido',
         sexo: 'Hembra',

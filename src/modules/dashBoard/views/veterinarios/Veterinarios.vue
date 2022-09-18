@@ -254,22 +254,24 @@
           </div>
         </div>
 
-        <div class="q-pa-md q-my-lg">
+        <div class="col-xs-12 col-md-11">
+          <div class="q-pa-md q-my-lg">
 
-          <q-table
-            title="Veterinarios"
-            :rows="getVeterinarios"
-            row-key="nombre"
-            selection="single"
-            v-model:selected="selectedTable"            
-          >
+            <q-table
+              title="Veterinarios"
+              :rows="getVeterinarios"
+              row-key="nombre"
+              selection="single"
+              v-model:selected="selectedTable"            
+            >
 
-            <template v-slot:top> 
-              <q-btn class="q-ml-sm" @click="removeVet" color="primary" label="Eliminar Seleccionado" />
-            </template>
+              <template v-slot:top> 
+                <q-btn class="q-ml-sm" @click="removeVet" color="primary" label="Eliminar Seleccionado" />
+              </template>
 
-          </q-table>
-          
+            </q-table>
+            
+          </div>
         </div>
 
       </main>

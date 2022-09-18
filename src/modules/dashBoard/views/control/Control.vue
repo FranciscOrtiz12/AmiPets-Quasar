@@ -222,15 +222,18 @@
           </div>
         </div>
 
-        <div class="q-pa-md q-my-lg">
+        
+        <div class="col-xs-12 col-md-11">
 
-          <q-table
-            title="Controles"
-            :rows="getControls"
-            row-key="id"
-            selection="single"
-            v-model:selected="selectedTable"
-          >
+          <div class="q-pa-md q-my-lg">
+
+            <q-table
+              title="Controles"
+              :rows="getControls"
+              row-key="id"
+              selection="single"
+              v-model:selected="selectedTable"
+            >
           
 
             <template v-slot:top>
@@ -238,6 +241,8 @@
             </template>
 
           </q-table>
+          
+        </div>
           
         </div>
 

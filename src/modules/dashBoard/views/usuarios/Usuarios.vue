@@ -9,7 +9,7 @@
 
 
         <div class="col-xs-12 col-md-10 q-pa-md">
-          <div class="q-gutter-y-md" style=" ">
+          <div class="q-gutter-y-md">
             <q-card>
               <q-tabs
                 v-model="tab"
@@ -261,22 +261,24 @@
           </div>
         </div>
 
-        <div class="q-pa-md q-my-lg">
+        <div class="col-xs-12 col-md-11">
+          <div class="q-pa-md q-my-lg">
 
-          <q-table
-            title="Usuarios"
-            :rows="getUsers"
-            row-key="nombre"
-            selection="single"
-            v-model:selected="selectedTable"            
-          >
+            <q-table
+              title="Usuarios"
+              :rows="getUsers"
+              row-key="nombre"
+              selection="single"
+              v-model:selected="selectedTable"            
+            >
 
-            <template v-slot:top>
-              <q-btn class="q-ml-sm" color="primary" label="Eliminar Seleccionado" @click="removeUser" />
-            </template>
+              <template v-slot:top>
+                <q-btn class="q-ml-sm" color="primary" label="Eliminar Seleccionado" @click="removeUser" />
+              </template>
 
-          </q-table>
-          
+            </q-table>
+            
+          </div>
         </div>
 
       </main>

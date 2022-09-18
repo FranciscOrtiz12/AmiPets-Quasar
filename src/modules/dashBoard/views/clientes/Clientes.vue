@@ -241,22 +241,24 @@
           </div>
         </div>
 
-        <div class="q-pa-md q-my-lg">
+        <div class="col-xs-12 col-md-11">
+          <div class="q-pa-md q-my-lg">
           
-          <q-table
-            title="Clientes"
-            :rows="getClients"
-            row-key="nombre"
-            selection="single"
-            v-model:selected="selectedTable"            
-          >
+            <q-table
+              title="Clientes"
+              :rows="getClients"
+              row-key="nombre"
+              selection="single"
+              v-model:selected="selectedTable"            
+            >
 
-            <template v-slot:top>
-              <q-btn class="q-ml-sm" color="primary" label="Eliminar Seleccionado" @click="removeClient" />
-            </template>
+              <template v-slot:top>
+                <q-btn class="q-ml-sm" color="primary" label="Eliminar Seleccionado" @click="removeClient" />
+              </template>
 
-          </q-table>
-          
+            </q-table>
+
+          </div>
         </div>
 
       </main>
